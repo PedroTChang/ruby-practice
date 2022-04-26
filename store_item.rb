@@ -15,7 +15,7 @@ class Item
   end
 
   def print_info
-    puts "The #{item} is/are #{size} and the brand is #{brand}. The cost is #{price}."
+    puts "The #{item} is/are #{size} and the brand is #{brand}. The cost is #{price}. It is currently #{@instock}"
   end
 
   def item
@@ -37,6 +37,10 @@ class Item
   def instock
     return @instock
   end
+
+  def instock=(input_instock)
+    @instock = input_instock
+  end
 end
 
 item1 = Item.new("pants", "large", "Bloidy", 60, true)
@@ -44,4 +48,5 @@ item2 = Item.new("guitar", "small", "Martin", 10000, true)
 item3 = Item.new("mug", "perfect", "Hyper Pure Ceramics", 1423, true)
 item1.print_info
 item2.print_info
+item3.instock = false
 item3.print_info

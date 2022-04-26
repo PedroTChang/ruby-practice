@@ -17,7 +17,7 @@ puts "#{employee1[:first_name]} #{employee1[:last_name]} makes #{employee1[:sala
 puts "#{employee2[:first_name]} #{employee2[:last_name]} makes #{employee2[:salary]} a year."
 #symbols are used because they are more efficient, and uses less memory
 
-#4. Class time
+#4. Class time; allows you to say what is accessable
 class Employee
   def initialize(input_first_name, input_last_name, input_salary, input_active)
     @first_name = input_first_name
@@ -32,6 +32,18 @@ class Employee
 
   def give_annual_raise
     @salary = @salary * 1.05
+  end
+
+  def first_name
+    return @first_name
+  end
+
+  def last_name
+    return @last_name
+  end
+
+  def active
+    return @active
   end
 end
 

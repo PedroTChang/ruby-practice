@@ -27,7 +27,7 @@ class Employee
   end
 
   def print_info
-    puts "#{@first_name} #{@last_name} makes #{@salary} a year."
+    puts "#{first_name} #{last_name} makes #{@salary} a year."
   end
 
   def give_annual_raise

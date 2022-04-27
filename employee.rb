@@ -20,6 +20,7 @@ puts "#{employee2[:first_name]} #{employee2[:last_name]} makes #{employee2[:sala
 #4. Class time; allows you to say what is accessable; long upfront; easier to keep creating new instances; more custom; encapsulation: allows you to control what one can access (no getter can't see it)
 class Employee
   attr_reader :first_name, :last_name, :active # getter method
+  # mikeys_attr_accessor :first_name, :last_name
 
   def initialize(input_options)
     @first_name = input_options[:first_name]
@@ -55,9 +56,16 @@ end
 
 employee1 = Employee.new({ first_name: "Suzie", last_name: "Pepper", salary: 80000, active: true }) # no idea what each means. same as array except better since array you can't print to find out what each is
 employee2 = Employee.new({ first_name: "April", last_name: "Rhodes", salary: 70000, active: true })
-employee1.print_info
-employee2.print_info
-employee2.give_annual_raise
-employee2.print_info
-employee2.active = false
-puts employee1.first_name
+
+class Manager < Employee
+  def send_report
+    puts "Sending email..."
+    # use email sending library/ gem?
+    puts "Email sent!"
+  end
+end
+
+# OOP = encapsulation, inheritance
+manager = Manager.new({ first_name: "Dakota", last_name: "Stanley", salary: 100000, active: true })
+manager.print_info
+manager.send_report

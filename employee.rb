@@ -58,6 +58,11 @@ employee1 = Employee.new({ first_name: "Suzie", last_name: "Pepper", salary: 800
 employee2 = Employee.new({ first_name: "April", last_name: "Rhodes", salary: 70000, active: true })
 
 class Manager < Employee
+  def initialize(input_options)
+    super
+    @employees = input_options[:employees]
+  end
+
   def send_report
     puts "Sending email..."
     # use email sending library/ gem?
@@ -66,6 +71,7 @@ class Manager < Employee
 end
 
 # OOP = encapsulation, inheritance
-manager = Manager.new({ first_name: "Dakota", last_name: "Stanley", salary: 100000, active: true })
+manager = Manager.new({ first_name: "Dakota", last_name: "Stanley", salary: 100000, active: true, employees: [employee1, employee2] })
 manager.print_info
 manager.send_report
+p manager

@@ -1,5 +1,5 @@
 class Vehicle
-  def initialize(input_options)
+  def initialize
     @speed = 0
     @direction = "north"
   end
@@ -19,7 +19,7 @@ end
 
 class Car < Vehicle
   def initialize(input_options)
-    super(input_options)
+    super()
     @fuel = input_options[:fuel]
     @make = input_options[:make]
     @model = input_options[:model]
@@ -45,7 +45,7 @@ end
 
 class Bike < Vehicle
   def initialize(input_options)
-    super(input_options)
+    super()
     @type = input_options[:type]
     @weight = input_options[:weight]
     @color = input_options[:color]

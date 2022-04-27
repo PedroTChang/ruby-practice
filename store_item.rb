@@ -6,23 +6,23 @@ puts "The #{item2[:item]} is/are #{item2[:size]} and the brand is #{item2[:brand
 puts "The #{item3[:item]} is/are #{item3[:size]} and the brand is #{item3[:brand]}. The cost is #{item3[:price]}."
 
 class Item
-  attr_reader :item, :size, :brand, :price, :instock
+  attr_reader :name, :size, :brand, :price, :instock
   attr_writer :instock
 
-  def initialize(input_item, input_size, input_brand, input_price, input_instock)
-    @item = input_item
-    @size = input_size
-    @brand = input_brand
-    @price = input_price
-    @instock = input_instock
+  def initialize(input_options)
+    @name = input_options[:name]
+    @size = input_options[:size]
+    @brand = input_options[:brand]
+    @price = input_options[:price]
+    @instock = input_options[:instock]
   end
 
   def print_info
-    puts "The #{item} is/are #{size} and the brand is #{brand}. The cost is #{price}."
+    puts "The #{name} is/are #{size} and the brand is #{brand}. The cost is #{price}."
   end
 
-  # def item
-  #   return @item
+  # def name
+  #   return @name
   # end
 
   # def size
@@ -46,9 +46,9 @@ class Item
   end
 end
 
-item1 = Item.new("pants", "large", "Bloidy", 60, true)
-item2 = Item.new("guitar", "small", "Martin", 10000, true)
-item3 = Item.new("mug", "perfect", "Hyper Pure Ceramics", 1423, true)
+item1 = Item.new({ name: "pants", size: "large", brand: "Bloidy", price: 60, instock: true })
+item2 = Item.new({ name: "guitar", size: "small", brand: "Martin", price: 10000, instock: true })
+item3 = Item.new({ name: "mug", size: "perfect", brand: "Hyper Pure Ceramics", price: 1423, instock: true })
 item1.print_info
 item2.print_info
 item3.print_info

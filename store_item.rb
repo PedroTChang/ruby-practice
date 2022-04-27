@@ -46,6 +46,16 @@ class Item
   end
 end
 
+class Food < Item
+  def initialize(input_options)
+    super(input_options)
+    @shelf_life = input_options[:shelf_life]
+  end
+
+  def shelf_life
+  end
+end
+
 item1 = Item.new({ name: "pants", size: "large", brand: "Bloidy", price: 60, instock: true })
 item2 = Item.new({ name: "guitar", size: "small", brand: "Martin", price: 10000, instock: true })
 item3 = Item.new({ name: "mug", size: "perfect", brand: "Hyper Pure Ceramics", price: 1423, instock: true })

@@ -1,9 +1,9 @@
-item1 = { item: "pants", size: "large", brand: "Bloidy", price: 60, instock: true }
-item2 = { item: "guitar", size: "small", brand: "Martin", price: 10000, instock: true }
-item3 = { item: "mug", size: "perfect", brand: "Hyper Pure Ceramics", price: 1423, instock: true }
-puts "The #{item1[:item]} is/are #{item1[:size]} and the brand is #{item1[:brand]}. The cost is #{item1[:price]}."
-puts "The #{item2[:item]} is/are #{item2[:size]} and the brand is #{item2[:brand]}. The cost is #{item2[:price]}."
-puts "The #{item3[:item]} is/are #{item3[:size]} and the brand is #{item3[:brand]}. The cost is #{item3[:price]}."
+item1 = { name: "pants", size: "large", brand: "Bloidy", price: 60, instock: true }
+item2 = { name: "guitar", size: "small", brand: "Martin", price: 10000, instock: true }
+item3 = { name: "mug", size: "perfect", brand: "Hyper Pure Ceramics", price: 1423, instock: true }
+puts "The #{item1[:name]} is/are #{item1[:size]} and the brand is #{item1[:brand]}. The cost is #{item1[:price]}."
+puts "The #{item2[:name]} is/are #{item2[:size]} and the brand is #{item2[:brand]}. The cost is #{item2[:price]}."
+puts "The #{item3[:name]} is/are #{item3[:size]} and the brand is #{item3[:brand]}. The cost is #{item3[:price]}."
 
 class Item
   attr_reader :name, :size, :brand, :price, :instock
@@ -53,15 +53,19 @@ class Food < Item
   end
 
   def shelf_life
+    return @shelf_life
   end
 end
 
 item1 = Item.new({ name: "pants", size: "large", brand: "Bloidy", price: 60, instock: true })
 item2 = Item.new({ name: "guitar", size: "small", brand: "Martin", price: 10000, instock: true })
 item3 = Item.new({ name: "mug", size: "perfect", brand: "Hyper Pure Ceramics", price: 1423, instock: true })
+item4 = Food.new({ name: "apple", size: "small", brand: "Fuji", price: 5, instock: true, shelf_life: "2 weeks" })
+
 item1.print_info
 item2.print_info
 item3.print_info
 item3.instock = false
 p item1.size
 p item3.instock
+p item4.shelf_life

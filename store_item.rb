@@ -21,26 +21,6 @@ class Item
     puts "The #{name} is/are #{size} and the brand is #{brand}. The cost is #{price}."
   end
 
-  # def name
-  #   return @name
-  # end
-
-  # def size
-  #   return @size
-  # end
-
-  # def brand
-  #   return @brand
-  # end
-
-  # def price
-  #   return @price
-  # end
-
-  # def instock
-  #   return @instock
-  # end
-
   def instock=(input_instock)
     @instock = input_instock
   end
